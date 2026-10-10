@@ -2,6 +2,8 @@
 
 Projeto de tratamento e análise de dados de vendas de janeiro e fevereiro de 2025 de uma loja fictícia de eletrodomésticos. O objetivo foi simular um cenário real de dado sujo, tratar as inconsistências com Python e apresentar os resultados em um dashboard no Power BI.
 
+![Dashboard](dashboard.png)
+
 ---
 
 ## O problema
@@ -93,18 +95,40 @@ Dois arquivos foram exportados:
 
 ---
 
+## Dashboard no Power BI
+
+O dashboard (`Portfólio.pbix`) usa os 135 registros válidos e traz:
+
+- Cartões com faturamento, ticket médio, total de vendas e itens vendidos
+- Faturamento por mês
+- Faturamento por produto
+- Faturamento por vendedor
+- Faturamento por forma de pagamento
+
+> O arquivo `.pbix` abre no Power BI Desktop. A imagem no topo deste README mostra o resultado.
+
+---
+
 ## Análise dos dados limpos
 
 Com os 135 registros válidos:
 
 - **Faturamento total**: R$ 1,10 milhão
-- **Ticket médio**: R$ 2.650
+- **Ticket médio por venda**: R$ 8.114
+- **Itens vendidos**: 404
 - **Produto com maior faturamento**: Notebook Gamer (R$ 255 mil)
 - **Melhor vendedora**: Ana Souza (R$ 324 mil — 38 vendas)
 - **Menor faturamento por produto**: Micro-ondas 30L (produto mais barato do mix)
-- **Janeiro faturou 11,3% mais que fevereiro** — sazonalidade esperada
+- **Janeiro faturou R$ 580 mil e fevereiro R$ 515 mil** — fevereiro foi 11,3% menor que janeiro
 
 Um ponto de atenção identificado: João Santos concentrou 8 vendas de celular e zero de ar condicionado, enquanto Ana Souza vendeu 6 ares condicionados. Isso sugere uma especialização espontânea da equipe que pode ser formalizada pela gestão.
+
+---
+
+## Limitações e próximos passos
+
+- A coluna `CATEGORIA` ainda tem valores inconsistentes (ex.: o mesmo produto aparece em "móveis" e "mobília"). Por isso o dashboard usa `PRODUTO` em vez de categoria. O próximo passo é mapear cada produto para uma única categoria no notebook.
+- Os 165 registros sinalizados em `vendas_PROBLEMAS_FINAL.xlsx` dependem de revisão do time de origem antes de entrarem na análise.
 
 ---
 
@@ -138,5 +162,7 @@ Os arquivos de entrada precisam estar na mesma pasta do notebook.
 ├── limpeza_dados_vendas.ipynb       # notebook com todo o processo
 ├── vendas_LIMPO_FINAL.xlsx          # dados tratados
 ├── vendas_PROBLEMAS_FINAL.xlsx      # registros com problemas
+├── Portfólio.pbix                   # dashboard no Power BI
+├── dashboard.png                    # print do dashboard
 └── README.md
 ```
