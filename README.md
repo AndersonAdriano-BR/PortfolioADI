@@ -2,7 +2,7 @@
 
 Projeto de tratamento e análise de dados de vendas de janeiro e fevereiro de 2025 de uma loja fictícia de eletrodomésticos. O objetivo foi simular um cenário real de dado sujo, tratar as inconsistências com Python e apresentar os resultados em um dashboard no Power BI.
 
-![Dashboard](dashboard.png)
+![Dashboard](Dashboard.png)
 
 ---
 
